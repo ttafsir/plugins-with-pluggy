@@ -54,3 +54,5 @@ For our sample application, we're developing a CLI application using `Click` tha
 
 [Adding the YAML reader plugin](../../tree/af15924a080aa97ff30fc157183cc7df9587c9d2/)
 
+[Implementing the Plugin Manager and calling the hook from the host program](../../tree/e6754a4d733794367b55df92080073a5fcdc5f2f/)
+
