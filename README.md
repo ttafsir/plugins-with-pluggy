@@ -50,3 +50,5 @@ For our sample application, we're developing a CLI application using `Click` tha
 
 [Adding Skeleton CLI app](../../tree/e96f55a489ac49713f13a7671dffad8078fbc612/)
 
+[Defining the hook specification](../../tree/02839cbf15f906b88b409d53bc9d8799d0ee9d71/)
+
