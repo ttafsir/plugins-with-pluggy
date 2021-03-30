@@ -1,0 +1,65 @@
+# Developing a plugin framework with `pluggy`
+
+Repo to experiment and learn how plugins can be implemented with [pluggy](https://pluggy.readthedocs.io/en/latest/).
+
+## How Plugins work
+
+Plugins, in general, provide the ability to extend or modify the behavior of a `host program` by installing a `plugin` for that program. Plugins allow you extend an application by using hook functions that are implemented in plugins and that can be dynamically loaded. The host program calls these hooks to provide functionality.
+
+Components of a plugin architecture:
+
+* `host` or `host program` - the program offering extensibility by specifying hook functions and invoking their implementation(s) as part of program execution. core system and application entry point
+* `plugin` - the program implementing (a subset of) the specified hooks and participating in program execution when the implementations are invoked by the host
+
+### Pluggy
+
+`pluggy` is a Python library that provides the core of plugin management for `pytest`.
+
+Components of `pluggy`:
+
+* **Hook Specification** - blue print that the plugin manager understands about the plugin definitions. Hook specifications have no code. `host_`-prefix is the typical naming convention, but not necessary.
+* **Plugin** - The actual implementation of hook functions based based on the hookspecs.
+* **Plugin Manager** - The plugin manager is responsible for finding and registering plugins
+* **Hook Implementation** - actual implementation of a hook
+
+#### Collecting results
+
+`pluggy` hook calls are `1:N` , meaning that, by default, calling a hook results in all underlying hook implementation functions to be invoked in sequence via a loop. Any function which returns a value other then a `None` result will have that result appended to a [`list`](https://docs.python.org/3/library/stdtypes.html#list) which is returned by the call. The `None` return values are essentially is "swallowed."
+
+The exception to this behavior is if the hook has been marked to return its [first result only](https://pluggy.readthedocs.io/en/latest/#firstresult) in which case only the first single value (which is not `None`) will be returned.
+
+#### Advanced Features of `pluggy`
+
+* [setuptools entrypoints](https://pluggy.readthedocs.io/en/latest/index.html?highlight=setuptools#loading-setuptools-entry-points)
+* [hook ordering](https://pluggy.readthedocs.io/en/latest/index.html?highlight=hook%20order#call-time-order)
+* [hookwrapping](https://pluggy.readthedocs.io/en/latest/index.html?highlight=Wrappers#wrappers)
+* plugins defining new hooks
+
+#### Benefits of `pluggy`
+
+* hooks can evolve
+  * new arguments do not affect plugins
+* no state or behavior
+  * plugins are free to keep state
+
+## Sample Application
+
+### Hookrefs
+
+### Hook Implementation
+
+```python
+
+```
+
+### Plugin Manager
+
+```python
+
+```
+
+### Invoke the Hook
+
+```python
+
+```
