@@ -44,22 +44,7 @@ The exception to this behavior is if the hook has been marked to return its [fir
 
 ## Sample Application
 
-### Hookrefs
+For our sample application, we're developing a CLI application using `Click` that will allow us to easily process different input file formats. Our CLI app will implement three different plugins to support `yaml`, `json`, and `csv` file types.
 
-### Hook Implementation
+[Initial Commit](../../tree/917b6868d3ae88f1e20c7d42cdc17d524556581d/)
 
-```python
-
-```
-
-### Plugin Manager
-
-```python
-
-```
-
-### Invoke the Hook
-
-```python
-
-```
