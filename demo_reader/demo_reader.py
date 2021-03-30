@@ -2,13 +2,15 @@ import click
 import pluggy
 
 import hookspec
-from plugins import YAMLPlugin
+from plugins import YAMLPlugin, JSONPlugin, CsvPlugin
 
 
 def get_plugin_manager():
     pm = pluggy.PluginManager('demo_reader')
     pm.add_hookspecs(hookspec)
     pm.register(YAMLPlugin())
+    pm.register(JSONPlugin())
+    pm.register(CsvPlugin())
     return pm
 
 
@@ -21,6 +23,12 @@ def cli():
 @click.option('--path', '-p', required=True, type=click.Path(exists=True))
 @click.option('--noop')
 def read(path, **kwargs):
+    """
+    Read file input
+
+    Example:
+        python demo_reader/demo_reader.py read -p test.yml
+    """
     pm = get_plugin_manager()
     data = pm.hook.demo_reader_read_data(path=path, config=kwargs)
     print(data)
