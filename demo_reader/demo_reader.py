@@ -31,6 +31,9 @@ def read(path, **kwargs):
     """
     pm = get_plugin_manager()
     data = pm.hook.demo_reader_read_data(path=path, config=kwargs)
+
+    # hook call returns a single result because we added `firstresult=True`
+    # to the hookspec
     print(data)
 
 

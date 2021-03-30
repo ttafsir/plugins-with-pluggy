@@ -3,7 +3,7 @@ from pluggy import HookspecMarker
 hookspec = HookspecMarker("demo_reader")
 
 
-@hookspec
+@hookspec(firstresult=True)
 def demo_reader_read_data(path, config):
     """
     read data from different formats
