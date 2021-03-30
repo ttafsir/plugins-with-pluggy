@@ -48,3 +48,5 @@ For our sample application, we're developing a CLI application using `Click` tha
 
 [Initial Commit](../../tree/917b6868d3ae88f1e20c7d42cdc17d524556581d/)
 
+[Adding Skeleton CLI app](../../tree/e96f55a489ac49713f13a7671dffad8078fbc612/)
+
