@@ -56,3 +56,4 @@ For our sample application, we're developing a CLI application using `Click` tha
 
 [Implementing the Plugin Manager and calling the hook from the host program](../../tree/e6754a4d733794367b55df92080073a5fcdc5f2f/)
 
+[Adding additional plugins](../../tree/4d5b36d67665b8169b58fa1d7e46883c69b24352/)
