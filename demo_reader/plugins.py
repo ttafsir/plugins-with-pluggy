@@ -11,7 +11,8 @@ class YAMLPlugin:
     """A hook implementation namespace for YAML."""
 
     @hookimpl
-    def read_data(path, config):
+    def demo_reader_read_data(self, path, config):
         """Read YAML input"""
-        if Path(path).suffix in ('yaml', 'yml'):
+        print(f'attempting YAML plugin for input {path}...')
+        if Path(path).suffix in ('.yaml', '.yml'):
             return yaml.safe_load(Path(path).read_text())
