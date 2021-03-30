@@ -52,3 +52,5 @@ For our sample application, we're developing a CLI application using `Click` tha
 
 [Defining the hook specification](../../tree/02839cbf15f906b88b409d53bc9d8799d0ee9d71/)
 
+[Adding the YAML reader plugin](../../tree/af15924a080aa97ff30fc157183cc7df9587c9d2/)
+
